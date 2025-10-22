@@ -7,7 +7,7 @@ public class WordMatch {
      * letters.
      */
     public WordMatch(String word) {
-        /* implementation not shown */
+        secret = word;
     }
 
 
@@ -33,6 +33,17 @@ public class WordMatch {
      * guess1 is not the same as guess2.
      */
     public String findBetterGuess(String guess1, String guess2) {
-        return null;
+    if (scoreGuess(guess1) > scoreGuess(guess2)) {
+        return guess1;
+    } else
+        if (scoreGuess(guess2) > scoreGuess(guess1)) {
+        return guess2;
+    } else {
+        if (guess1.compareTo(guess2) > 0) {
+            return guess1;
+        } else {
+            return guess2;
+        }
     }
+}
 }
